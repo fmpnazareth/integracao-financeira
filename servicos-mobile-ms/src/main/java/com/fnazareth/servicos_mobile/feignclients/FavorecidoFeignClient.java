@@ -10,7 +10,7 @@ import com.fnazareth.servicos_mobile.entities.Favorecido;
 
 
 @Component
-@FeignClient(name = "favorecidos-ms", url="localhost:8001", path="/favorecidos-ms")
+@FeignClient(name = "favorecidos-ms", path="/favorecidos-ms")
 public interface FavorecidoFeignClient {
 	
 	@GetMapping(value = "/{id}")

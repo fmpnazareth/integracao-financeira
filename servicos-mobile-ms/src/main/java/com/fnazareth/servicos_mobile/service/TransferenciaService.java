@@ -13,9 +13,6 @@ import com.fnazareth.servicos_mobile.feignclients.FavorecidoFeignClient;
 @Service
 public class TransferenciaService {
 	
-	@Value("${favorecidos-ms.host}")
-	private String favorecidosHost;
-	
 	@Autowired
 	private FavorecidoFeignClient favorecidoFeignClient;
 	
