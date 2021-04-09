@@ -13,14 +13,19 @@ Servidor responsável pela API de toda interface mobile. Será ela que chamará 
 ## favorecidos-ms
 Servidor que receberá a chamada do microserviço servicos-mobile-ms, fará as devidas validações, buscará no banco a lista de clientes favorecidos.
 
-O projeto conta com 
+## eureka-ms
+Servidor que irá realizar o balanceamento de carga e failover de microserviços, além de ser um facilitador na subida de instâncias e no processo de roterização.
+
+## micrometer-ms
+O micrometer-ms será o microserviço responsável por alimentar o Grafana atravéz dos serviços http disponibilizados pelo actuator.
+
 ## Modelagem de dados
 
 O banco de dados do projeto será de um banco de dados não relacional implementado pelo Cassadra. Pois por não existir necesidade de uma complexidade nas consultas e se exigir peformance com um crescimento horizontal. Conta com 2 documentos(tb_user e tb_favorecido) que são relacionados pelo cpf e possuem uma relação 1 para n onde, pois uma usuário possui n favorecidos.. O repositório será acesso exclusivamente pelo microserviço users-ms. 
 
 ## Observability
 
-O micrometer-ms será o microserviço responsável por alimentar o grafana atravéz dos serviços http disponibilizados pelo actuator.
+O projeto irá contar com um servidor apartado do Grafana que irá consumir o microserviço micrometer-ms. O Grafana irá gerar os relátorios que serão úteis para avaliar a o sistema como um todo.
 
 ## Desenho da Arquiterura do Projeto
 
